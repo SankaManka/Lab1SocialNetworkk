@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .main {
+            margin-left: 200px ;
+            margin-right: 200px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                    'header header header header header header'
+                    'menu main main main main main'
+                    ;
+            grid-gap: 10px;
+            padding: 10px;
+        }
+        .leftboard {
+            grid-area: menu;
+            border: 1px solid #333333;
+            height: 100%;
+        }
+        .heading {
+            display: inline-block;
+            grid-area: header;
+            border: 1px solid #333;
+            height: 70px;
+        }
+       .rightboard {
+            grid-area: main;
+            border: 1px solid #333;
+           height: 100%;
+        }
+
+       .logo {
+           float: left;
+           color: rgba(255, 255, 255, 0.8);
+           text-align: center;
+           font-size: 10mm;
+           margin-top: 5px;
+           margin-left: 5px;
+           width: 282px;
+           height: 60px;
+           background-color: #333333;
+           border-radius: 20px;
+       }
+
+        .settings {
+            margin: auto;
+            border-left: 1px solid #333333;
+            float: right;
+            width: 150px;
+            height: 51px;
+            padding: 10px;
+            text-align: center;
+            font-size: 5mm;
+
+        }
+
+        .grid-container1 {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: auto;
+
+
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-top: 1px solid rgba(0, 0, 0, 0.8);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.8) ;
+            padding: 6px;
+            font-size: 15px;
+            text-align: center;
+        }
+        .name {
+            float: left;
+            width: 50%;
+            height: 30px;
+            border: #333333;
+            border-bottom: 1px solid #333333;
+
+        }
+        .name1 {
+            margin: auto;
+            text-align: left;
+            font-size: 5mm;
+        }
+        .name2 {
+            margin: auto;
+            text-align: right;
+            font-size: 5mm;
+        }
+        .picture {
+            float: left;
+            margin: 2% 2% 0.5%;
+            background-color: darkgrey;
+            height: 300px;
+            width: 35%;
+            text-align: center;
+
+        }
+        .status {
+            margin: 2% 5% 0.5%;
+            float: right;
+            background-color: darkgrey;
+            width: 50%;
+            height: 30px;
+            text-align: center;
+        }
+        .information {
+            margin: 2% 5% 0.5%;
+            border: 1px solid #333333;
+            float: right;
+            height: 170px;
+            width: 50%;
+            background-color: darkgrey;
+        }
+        .pictures {
+            margin: 2% 5%;
+            border: 1px solid #333333;
+            float: right;
+            height: 150px;
+            width: 50%;
+            background-color: darkgrey;
+        }
+        .posts {
+            display: inline-block;
+            margin: 2% 5%;
+            border: 1px solid #333333;
+            float: right;
+            height: 500px;
+            width: 50%;
+            background-color: darkgrey;
+        }
+        .tapamassage {
+            float: left;
+            margin: 2% 2% 0 1em;
+            background-color: darkgrey;
+            height: 60px;
+            width: 16%;
+            position: static;
+            font-size: 5mm;
+            text-align: center;
+        }
+        .addfriend {
+            float: left;
+            margin: 2% 1% 0 1em;
+            background-color: darkgrey;
+            height: 60px;
+            width: 16%;
+            position: static;
+            font-size: 5mm;
+            text-align: center;
+        }
+        .news {
+            float: left;
+            margin-left: 11.5%;
+            margin-top: 1%;
+            background-color: darkgrey;
+            height: 30px;
+            width: 16%;
+            position: static;
+            font-size: 5mm;
+            text-align: center;
+        }
+        .friends {
+            float: left;
+            margin: 2% 2%;
+            background-color: darkgrey;
+            height: 150px;
+            width: 35%;
+            position: static;
+        }
+        .frindsonline {
+            float: left;
+            margin: 2% 2%;
+            background-color: darkgrey;
+            height: 150px;
+            width: 35%;
+            position: static;
+        }
+        #center {
+            text-align: center;
+        }
+        .pictures1 {
+            background-color: aliceblue;
+            border-bottom: 1px solid #333333;
+        }
+        .numposts {
+            background-color: aliceblue;
+            border-bottom: 1px solid #333333;
+
+        }
+        .search {
+            margin-right: 2%;
+            margin-top: 0.6%;
+            float: right;
+            text-align: center;
+            font-size: 3mm;
+            background-color: darkgrey;
+            width: 80px;
+        }
+        .pic {
+            width: 25%;
+            height: 80%;
+            border: 1px solid #333333;
+            float: left;
+            margin-left: 6%;
+            margin-top: 1%;
+        }
+        .minipic {
+            float: left;
+            height: 10%;
+            width: 10%;
+            border: 1px solid #333333;
+            margin-top: 5%;
+            margin-left: 5%;
+            font-size: 2mm;
+            text-align: center;
+        }
+        .triplepost {
+            height: 25%;
+            width: 76%;
+            border: 1px solid #333333;
+            float: right;
+            margin-right: 5%;
+            margin-top: 10%;
+            font-size: 5mm;
+            text-align: center;
+        }
+        .minipic1 {
+            float: left;
+            height: 10%;
+            width: 10%;
+            border: 1px solid #333333;
+            margin-top: 25%;
+            margin-left: 5%;
+            font-size: 2mm;
+            text-align: center;
+        }
+        .triplepost1 {
+            height: 25%;
+            width: 76%;
+            border: 1px solid #333333;
+            float: right;
+            margin-right: 5%;
+            margin-top: 10%;
+            font-size: 5mm;
+            text-align: center;
+        }
+        .imagineyouhavefriend {
+            border: 1px solid #333333;
+            float: left;
+            height: 39%;
+            width: 18%;
+            margin-top: 1%;
+            margin-left: 5%;
+        }
+        .imagineyouhavefriendonline {
+            border: 1px solid #333333;
+            float: left;
+            height: 39%;
+            width: 18%;
+            margin-top: 1%;
+            margin-left: 5%;
+        }
+        .imagineyouhavefollowers {
+            margin-left: 8.5%;
+            font-size: 5mm;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Your name</title>
+
+</head>
+<body>
+<div class="main">
+<div class="grid-container">
+<div class="heading">
+    <div class="logo">
+        <b>Логотип</b>
+    </div>
+    <div class="settings">
+        <b>Настройки</b>
+    </div>
+</div>
+<div class="leftboard">
+    <div class="grid-container1">
+        <div class="grid-item">Моё досье</div>
+        <div class="grid-item">Товарищи</div>
+        <div class="grid-item">Фотокарточки</div>
+        <div class="grid-item">Киноленты</div>
+        <div class="grid-item">Магнитофон</div>
+        <div class="grid-item">Телеграммы</div>
+        <div class="grid-item">Объединения</div>
+        <div class="grid-item">Информбюро</div>
+    </div>
+</div>
+<div class="rightboard">
+    <div class="name">
+        <p class="name1">Имя Фамилия</p>
+    </div>
+    <div class="name">
+        <p class="name2">Сетевой статус</p>
+    </div>
+    <div class="picture">
+        <b class="picture1">Место для фото</b>
+    </div>
+
+    <div class="status">Статус</div>
+    <div class="information">
+        <p>Город:</p>
+        <p>День рождения:</p>
+        <p>Семейное положение:</p>
+        <p id="center">Получить подробную информацию</p>
+    </div>
+    <div class="pictures">
+        <div class="pictures1">Фотографии</div>
+        <div class="pic"></div>
+        <div class="pic"></div>
+        <div class="pic"></div>
+    </div>
+    <div class="tapamassage">Написать сообщение</div>
+    <div class="addfriend">Добавить в друзья</div>
+    <b class="imagineyouhavefollowers">Количество подписчиков</b>
+    <div class="news">Новости</div>
+    <div class="posts">
+        <div class="numposts">Количество записей
+            <div class="search">Поиск</div>
+        </div>
+        <div class="minipic">Миниатюра фото</div>
+        <div class="triplepost">Пост пост пост</div>
+        <div class="minipic1">Миниатюра фото</div>
+        <div class="triplepost1">Пост пост пост</div>
+    </div>
+    <div class="friends">
+        <div class="pictures1">Друзья</div>
+        <div class="imagineyouhavefriend"></div>
+        <div class="imagineyouhavefriend"></div>
+        <div class="imagineyouhavefriend"></div>
+        <div class="imagineyouhavefriend"></div>
+        <div class="imagineyouhavefriend"></div>
+        <div class="imagineyouhavefriend"></div>
+        <div class="imagineyouhavefriend"></div>
+        <div class="imagineyouhavefriend"></div>
+    </div>
+    <div class="frindsonline">
+        <div class="pictures1">Друзья онлайн</div>
+        <div class="imagineyouhavefriendonline"></div>
+        <div class="imagineyouhavefriendonline"></div>
+        <div class="imagineyouhavefriendonline"></div>
+        <div class="imagineyouhavefriendonline"></div>
+        <div class="imagineyouhavefriendonline"></div>
+        <div class="imagineyouhavefriendonline"></div>
+        <div class="imagineyouhavefriendonline"></div>
+        <div class="imagineyouhavefriendonline"></div>
+    </div>
+
+</div>
+</div>
+</div>
+</body>
+</html>
